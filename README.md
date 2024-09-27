@@ -24,7 +24,7 @@
         * [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) (roadmap)
     * DOM
         * [Window API](https://developer.mozilla.org/en-US/docs/Web/API/Window) (roadmap)
-        * [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) (roadmap) (in progress)
+        * [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) (in progress)
 
 ## Structure
 
@@ -34,15 +34,20 @@ Bindings to headless js web apis available on web runtimes like Deno and Edge ru
 ### Dom
 Bindings to html/dom web apis available on web browsers, currently scoped/limited to DOM elements required to use the headless web apis like window and HTMLCanvasElement
 
-## Sources
-* [MDN](https://developer.mozilla.org/en-US/docs/Web/API)   
+## Type Sources
+* [MDN Web API](https://developer.mozilla.org/en-US/docs/Web/API)   
 * [TypeScript-DOM-lib-generator](https://github.com/microsoft/TypeScript-DOM-lib-generator)
 
 ## Binding styles preferences
-js.Number
-* For fractions use Double
-* For integers part use Int example `window.innerWidth`
-* If unsure whether to use Int or Double, check MDN docs for that value or property, [example](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight#value).
+* Docstrings
+   * All bindings should refer to their closest MDN reference in docstrings as markdown links
+   * Docstrings should only contain MDN reference links, except for rare cases of scala.js specific technical comments, for details consult the online MDN reference link in docstring of each binding
 
-js.Methods
-* For method polymorphism prefer method overloads instead of default parameters, add as many overloads as required for readability
+* Numbers
+   * For fractions use Double
+   * For integers part use Int example `window.innerWidth`
+   * If unsure whether to use Int or Double, check MDN docs for that value or property, [example](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight#value).
+
+* Methods
+   * For binding to js polymorphic methods prefer scala method overloads
+   * For methods with optional parameters prefer extra overloads excluding those params instead of using default paramenters, add as many overloads as required for readability
