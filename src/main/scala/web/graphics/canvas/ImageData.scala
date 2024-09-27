@@ -1,14 +1,15 @@
-package org.dottyjs.web.Image
+package org.dottyjs.web.graphics.canvas
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import org.dottyjs.web.graphics.PredefinedColorSpace
+
+// IMAGE DATA is a constituent of web canvas api
 
 @js.native
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ImageData) */
 trait ImageData extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/colorSpace) */
-  val colorSpace: PredefinedColorSpace
+  val colorSpace: CanvasColorSpace
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data) */
   val data: js.typedarray.Uint8ClampedArray
@@ -23,5 +24,5 @@ end ImageData
 @js.native
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createImageData#settings) */
 trait ImageDataSettings extends js.Object:
-  var colorSpace: js.UndefOr[PredefinedColorSpace]
+  var colorSpace: js.UndefOr[CanvasColorSpace]
 end ImageDataSettings

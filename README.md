@@ -1,40 +1,37 @@
-# Experimental Scala.js headless web bindings for Scala 3 (dotty)
+# Scala3.js bindings for browser graphics, audio and input
 
 ## Diferences with [scala-js-dom](https://github.com/scala-js/scala-js-dom)
-* Targets headless (non HTML/CSS/DOM) web apis like canvas, webgl, audio, etc.
-* Provide more presice and closer bindings as those of typescript
-* Leverate Scala 3 (dotty) literal types
-* Leverage Scala 3 (dotty) union types
-* Target Scala 3 LTS
+* `scala-js-dom` targets all browser web APIs, whereas `dotty-js` targets a subset of browser apis like canvas, webgl, audio, gamepad and window
+* `dotty-js` focuses on more presice and closer bindings as those of typescript
+* `dotty-js` leverate Scala 3 (dotty) union types and literal types
+* `dotty-js` targets Scala 3 LTS
 
 ## Diferences with [scala-dom-types](https://github.com/raquo/scala-dom-types)
-* dotty-js targets headless web apis whereas scala-dom-types targets HTML/CSS/DOM apis
-
-## Compatibility with scala.js DOM libraries
-* Both [scala-js-dom](https://github.com/scala-js/) and [scala-dom-types](https://github.com/raquo/scala-dom-types) can be used, one may even be required to work HTML/CSS/DOM apis which are outside the scope of dotty-js
+* `dotty-js` targets non-HTML apis whereas `scala-dom-types` targets HTML/CSS apis, so they are complementary
 
 ## Goals
-* Given the amount of web apis available, a subset of headless graphics, audio and input is targeted, as well subset of the HTML/DOM apis like `HTMLCanvasElement` and `window`
-    * Graphics
-        * [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) (in progress)
-        * [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) (roadmap)
-        * [WebGPU API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) (roadmap)
-    * [Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) (roadmap)
-    * Input
-        * [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) (roadmap)
-    * DOM
-        * [Window API](https://developer.mozilla.org/en-US/docs/Web/API/Window) (roadmap)
-        * [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) (in progress)
+Provide bindings for non-HTML graphics, audio and input, as well subset of the HTML/DOM apis like `HTMLCanvasElement` and `window` to render those graphics
+* Web
+   * Graphics
+      * [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) (in progress)
+      * [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) (roadmap)
+      * [WebGPU API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) (roadmap)
+   * [Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) (roadmap)
+   * Input
+      * [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) (roadmap)
+   * DOM
+      * [Window API](https://developer.mozilla.org/en-US/docs/Web/API/Window) (roadmap)
+      * [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) (in progress)
 
-## Structure
+## Why not full browser API?
+* Given the always increasing amount of web apis, and the fact that scala.js DOM tags bidings alraedy exist, a subset of headless graphics, audio and input is targeted
 
-### Web
-Bindings to headless js web apis available on web runtimes like Deno and Edge runtimes
-
-### Dom
-Bindings to html/dom web apis available on web browsers, currently scoped/limited to DOM elements required to use the headless web apis like window and HTMLCanvasElement
+## Does it work on backend?
+* Even though the apis targeted can be think as *headless* like the subset of web APIs found in Edge runtime or Deno, this library is meant to be used on browsers
+* Some graphics can run on backend, examples are [node-canvas](https://github.com/Automattic/node-canvas) and [@std/webgpu](https://jsr.io/@std/webgpu), but not audio or input
 
 ## Type Sources
+MDN is the ultimate reference source, while creating dotty-js bindings [found MDN to be more precise than the official typescript DOM bindings](https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/1808)
 * [MDN Web API](https://developer.mozilla.org/en-US/docs/Web/API)   
 * [TypeScript-DOM-lib-generator](https://github.com/microsoft/TypeScript-DOM-lib-generator)
 
@@ -44,10 +41,16 @@ Bindings to html/dom web apis available on web browsers, currently scoped/limite
    * Docstrings should only contain MDN reference links, except for rare cases of scala.js specific technical comments, for details consult the online MDN reference link in docstring of each binding
 
 * Numbers
-   * For fractions use Double
-   * For integers part use Int example `window.innerWidth`
-   * If unsure whether to use Int or Double, check MDN docs for that value or property, [example](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight#value).
+   * For fractionals use `Double`
+   * For integers use `Int` example `window.innerWidth` or `array.length`
+   * If unsure whether to use `Int` or `Double`, check MDN docs for that value or property, [example](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight#value).
 
 * Methods
    * For binding to js polymorphic methods prefer scala method overloads
    * For methods with optional parameters prefer extra overloads excluding those params instead of using default paramenters, add as many overloads as required for readability
+
+* Classes
+   * For js classes use scala classes, in other words anything created with `new` keyword on js will map to a scala class
+
+* Literal Objects
+   * For js literal objects use scala traits, in other words anything created with `{}` on js will map to a scala trait

@@ -1,15 +1,10 @@
-package org.dottyjs.web.graphics
+package org.dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import org.scalajs.dom.{HTMLElement, CanvasFillRule}
+import org.scalajs.dom.HTMLElement
 import org.scalajs.dom.CanvasGradient
 import org.scalajs.dom.CanvasPattern
-import org.scalajs.dom.Path2D
-import org.scalajs.dom.ImageData
-import org.scalajs.dom.HTMLImageElement
-import org.scalajs.dom.HTMLVideoElement
-import org.scalajs.dom.ImageBitmap
 
 import org.dottyjs.dom.HTMLCanvasElement
 

@@ -1,4 +1,4 @@
-package org.dottyjs.web.graphics
+package org.dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
@@ -24,6 +24,18 @@ trait CanvasDrawPath extends js.Object:
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip) */
   def clip(path: Path2D, fillRule: CanvasFillRule): Unit = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill) */
+  def fill(): Unit = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill) */
+  def fill(fillRule: CanvasFillRule): Unit = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill) */
+  def fill(path: Path2D): Unit = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill) */
+  def fill(path: Path2D, fillRule: CanvasFillRule): Unit = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath) */
   def isPointInPath(x: Double, y: Double): Boolean = js.native

@@ -1,1 +1,0 @@
-make sure to use Double when binding to JS numbers, unless it's absolutely necessary to use Int, example on array.js lenght

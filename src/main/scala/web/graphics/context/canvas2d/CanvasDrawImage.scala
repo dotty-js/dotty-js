@@ -1,4 +1,4 @@
-package org.dottyjs.web.graphics
+package org.dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
@@ -14,8 +14,7 @@ type CanvasImageSource =
   HTMLElement | HTMLImageElement | HTMLVideoElement | HTMLCanvasElement |
     ImageBitmap
 
-// CanvasImageSource TODO add OffscreenCanvas, SVGImageElement, VideoFrame
-
+// CanvasImageSource TODO add SVGImageElement, VideoFrame
 @js.native
 trait CanvasDrawImage extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage) */

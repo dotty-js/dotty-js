@@ -1,4 +1,4 @@
-package org.dottyjs.web.graphics
+package org.dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
