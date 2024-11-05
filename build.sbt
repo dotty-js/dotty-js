@@ -1,6 +1,6 @@
 val scala3Version = "3.3.4"
 
-lazy val root = project
+lazy val dottyJs = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(
