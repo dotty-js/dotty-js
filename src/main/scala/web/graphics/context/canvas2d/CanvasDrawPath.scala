@@ -3,10 +3,8 @@ package org.dottyjs.web.graphics.context.canvas2d
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import org.scalajs.dom.CanvasFillRule
-import org.scalajs.dom.Path2D
 
 //  TODO - planaro CanvasFillRule
-//  TODO - planaro Path2D
 
 @js.native
 trait CanvasDrawPath extends js.Object:
