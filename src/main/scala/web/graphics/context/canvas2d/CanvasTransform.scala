@@ -2,10 +2,7 @@ package org.dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-
-// TODO DOMMatrix fields
-/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix) */
-class DOMMatrix extends js.Object
+import org.dottyjs.web.geometry.DOMMatrix
 
 @js.native
 trait CanvasTransform extends js.Object:
