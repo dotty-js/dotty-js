@@ -1,4 +1,4 @@
-package web.geometry
+package org.dottyjs.web.geometry
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
