@@ -40,7 +40,7 @@ abstract class HTMLCanvasElement extends HTMLElement {
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
   def getContext(
-      contextId: "2d", options: js.UndefOr[Canvas2dContext2DAttributes]
+      contextId: "2d", options:Canvas2dContext2DAttributes
   ): CanvasRenderingContext2D | Null = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
@@ -48,7 +48,7 @@ abstract class HTMLCanvasElement extends HTMLElement {
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
   def getContext(
-      contextId: "webgl", options: js.UndefOr[WebGLContextAttributes]
+      contextId: "webgl", options: WebGLContextAttributes
   ): WebGLRenderingContext | Null = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
@@ -56,7 +56,7 @@ abstract class HTMLCanvasElement extends HTMLElement {
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
   def getContext(
-      contextId: "webgl2", options: js.UndefOr[WebGLContextAttributes]
+      contextId: "webgl2", options: WebGLContextAttributes
   ): WebGL2RenderingContext | Null
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
@@ -66,7 +66,7 @@ abstract class HTMLCanvasElement extends HTMLElement {
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
   def getContext(
       contextId: "bitmaprenderer",
-      options: js.UndefOr[ImageBitmapContextAttributes]
+      options: ImageBitmapContextAttributes
   ): ImageBitmapRenderingContext | Null
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL) */
