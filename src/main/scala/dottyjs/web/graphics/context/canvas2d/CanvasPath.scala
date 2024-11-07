@@ -3,7 +3,7 @@ package dottyjs.web.graphics.context.canvas2d
 import scala.scalajs.js
 
 @js.native
-private abstract trait CanvasPath extends js.Object:
+abstract trait CanvasPath extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc) */
   def arc(
       x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double

@@ -1,6 +1,7 @@
 package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
+import dottyjs.web.graphics.canvas.TextMetrics
 
 @js.native
 private abstract trait CanvasText extends js.Object:

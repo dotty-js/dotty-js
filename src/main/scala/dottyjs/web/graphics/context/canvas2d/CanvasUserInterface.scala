@@ -3,6 +3,7 @@ package dottyjs.web.graphics.context.canvas2d
 import scala.scalajs.js
 
 import org.scalajs.dom.Element
+import dottyjs.web.graphics.canvas.Path2D
 
 @js.native
 private abstract trait CanvasUserInterface extends js.Object:

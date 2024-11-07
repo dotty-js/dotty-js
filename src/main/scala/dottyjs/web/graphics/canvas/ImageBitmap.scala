@@ -15,7 +15,7 @@ end ImageBitmapProperties
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap#instance_methods) */
 @js.native
-private abstract trait ImageBitmapMethods:
+private abstract trait ImageBitmapMethods extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap/close) */
   def close(): Unit = js.native
 end ImageBitmapMethods
