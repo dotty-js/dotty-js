@@ -7,10 +7,10 @@ import org.scalajs.dom.HTMLElement
 import org.scalajs.dom.Blob
 import org.scalajs.dom.MediaStream
 
-import dottyjs.web.graphics.canvas.OffscreenCanvas
-import dottyjs.web.graphics.canvas.OffscreenCanvasProperties
-import dottyjs.web.graphics.canvas.CanvasContextMethods
-import dottyjs.web.graphics.context.canvas2d.CanvasRenderingContext2D
+import dottyjs.web.canvas.OffscreenCanvas
+import dottyjs.web.canvas.OffscreenCanvasProperties
+import dottyjs.web.canvas.CanvasContextMethods
+import dottyjs.web.graphics.d2.CanvasRenderingContext2D
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_properties) */
 private abstract trait HTMLCanvasElementProperties extends js.Object:
