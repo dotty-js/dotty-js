@@ -184,43 +184,9 @@ class DOMMatrixReadOnly
   val m44: Double = js.native
 end DOMMatrixReadOnly
 
-/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix) */
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#instance_methods) */
 @js.native
-@JSGlobal
-class DOMMatrix
-    extends js.Object with DOMMatrixProperties with DOMMatrixReadOnlyMethods:
-  // TODO css transform string or 6 | 16 tuple
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/DOMMatrix) */
-  def this(init: js.Array[Double] | String) = this()
-
-  var is2D: Boolean = js.native
-
-  var isIdentity: Boolean = js.native
-
-  var a: Double = js.native
-  var b: Double = js.native
-  var c: Double = js.native
-  var d: Double = js.native
-  var e: Double = js.native
-  var f: Double = js.native
-
-  var m11: Double = js.native
-  var m12: Double = js.native
-  var m13: Double = js.native
-  var m14: Double = js.native
-  var m21: Double = js.native
-  var m22: Double = js.native
-  var m23: Double = js.native
-  var m24: Double = js.native
-  var m31: Double = js.native
-  var m32: Double = js.native
-  var m33: Double = js.native
-  var m34: Double = js.native
-  var m41: Double = js.native
-  var m42: Double = js.native
-  var m43: Double = js.native
-  var m44: Double = js.native
-
+abstract trait DOMMatrixMethods extends js.Object with DOMMatrixReadOnlyMethods:
   def invertSelf(): DOMMatrix = js.native
   def multiplySelf(other: DOMMatrixInit): DOMMatrix = js.native
   def preMultiplySelf(other: DOMMatrixInit): DOMMatrix = js.native
@@ -277,6 +243,44 @@ class DOMMatrix
   def translateSelf(tx: Double): DOMMatrix = js.native
   def translateSelf(tx: Double, ty: Double): DOMMatrix = js.native
   def translateSelf(tx: Double, ty: Double, tz: Double): DOMMatrix = js.native
+end DOMMatrixMethods
+
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix) */
+@js.native
+@JSGlobal
+class DOMMatrix
+    extends js.Object with DOMMatrixProperties with DOMMatrixMethods:
+  // TODO css transform string or 6 | 16 tuple
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/DOMMatrix) */
+  def this(init: js.Array[Double] | String) = this()
+
+  var is2D: Boolean = js.native
+
+  var isIdentity: Boolean = js.native
+
+  var a: Double = js.native
+  var b: Double = js.native
+  var c: Double = js.native
+  var d: Double = js.native
+  var e: Double = js.native
+  var f: Double = js.native
+
+  var m11: Double = js.native
+  var m12: Double = js.native
+  var m13: Double = js.native
+  var m14: Double = js.native
+  var m21: Double = js.native
+  var m22: Double = js.native
+  var m23: Double = js.native
+  var m24: Double = js.native
+  var m31: Double = js.native
+  var m32: Double = js.native
+  var m33: Double = js.native
+  var m34: Double = js.native
+  var m41: Double = js.native
+  var m42: Double = js.native
+  var m43: Double = js.native
+  var m44: Double = js.native
 end DOMMatrix
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#static_methods) */
