@@ -8,6 +8,7 @@ import org.scalajs.dom.Blob
 import org.scalajs.dom.MediaStream
 
 import dottyjs.web.graphics.canvas.OffscreenCanvas
+import dottyjs.web.graphics.canvas.OffscreenCanvasProperties
 import dottyjs.web.graphics.context.canvas2d.CanvasRenderingContext2D
 import dottyjs.web.graphics.context.canvas2d.Canvas2dContext2DAttributes
 import dottyjs.web.graphics.context.bitmap.ImageBitmapRenderingContext
@@ -18,17 +19,7 @@ import dottyjs.web.graphics.context.webgl2.WebGL2RenderingContext
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_properties) */
 @js.native
-private abstract trait HTMLCanvasElementProperties extends js.Object:
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width)
-    * Natural number
-    */
-  var width: Int = js.native
-
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/height)
-    * Natural number
-    */
-  var height: Int = js.native
-end HTMLCanvasElementProperties
+private abstract trait HTMLCanvasElementProperties extends OffscreenCanvasProperties
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_methods) */
 @js.native
