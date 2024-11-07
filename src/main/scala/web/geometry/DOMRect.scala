@@ -4,23 +4,21 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/fromRect_static#rectangle) */
-@js.native
 trait DOMRectInit extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/height) */
-  def height: js.UndefOr[Double]
+  def height: js.UndefOr[Double] = js.undefined
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/width) */
-  def width: js.UndefOr[Double]
+  def width: js.UndefOr[Double] = js.undefined
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/x) */
-  def x: js.UndefOr[Double]
+  def x: js.UndefOr[Double] = js.undefined
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/y) */
-  def y: js.UndefOr[Double]
+  def y: js.UndefOr[Double] = js.undefined
 end DOMRectInit
 
-@js.native
-trait DOMRectJSON extends DOMRectInit:
+abstract trait DOMRectJSON extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/x) */
   def x: Double
 
@@ -47,9 +45,7 @@ trait DOMRectJSON extends DOMRectInit:
 end DOMRectJSON
 
 @js.native
-@JSGlobal
-// Avoid trait to prevent accidental instantiation
-abstract class DOMRect extends DOMRectJSON:
+abstract trait DOMRect extends DOMRectJSON:
   // Not on MDN but tested on Chromium also appeared on tslib
   def toJSON(): DOMRectJSON = js.native
 end DOMRect

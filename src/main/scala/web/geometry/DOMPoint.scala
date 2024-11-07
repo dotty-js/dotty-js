@@ -4,23 +4,21 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/fromPoint_static#sourcepoint) */
-@js.native
 trait DOMPointInit extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/x) */
-  def x: js.UndefOr[Double]
+  def x: js.UndefOr[Double] = js.undefined
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/y) */
-  def y: js.UndefOr[Double]
+  def y: js.UndefOr[Double] = js.undefined
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/z) */
-  def z: js.UndefOr[Double]
+  def z: js.UndefOr[Double] = js.undefined
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w) */
-  def w: js.UndefOr[Double]
+  def w: js.UndefOr[Double] = js.undefined
 end DOMPointInit
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON#return_value) */
-@js.native
 trait DOMPointJSON extends js.Object:
   def x: Double
 
@@ -32,11 +30,11 @@ trait DOMPointJSON extends js.Object:
 end DOMPointJSON
 
 @js.native
-@JSGlobal
-// Avoid trait to prevent accidental instantiation
-abstract class DOMPoint extends DOMPointJSON:
+abstract trait DOMPoint extends DOMPointJSON:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON) */
   def toJSON(): DOMPointJSON = js.native
+
+  // TODO DOMPointReadOnly.matrixTransform will be implemented in a future release
 end DOMPoint
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly) */
