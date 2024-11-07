@@ -26,7 +26,7 @@ private abstract trait CanvasLineStyles extends js.Object:
   var lineDashOffset: Double
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getLineDash)
-    * unsigned long
+    * @returns array of non-negative numbers
     */
   def getLineDash(): js.Array[Double]
 

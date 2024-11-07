@@ -37,5 +37,5 @@ MDN is the ultimate reference source, while creating dotty-js bindings [found MD
 * [MDN Web API](https://developer.mozilla.org/en-US/docs/Web/API)   
 * [TypeScript-DOM-lib-generator](https://github.com/microsoft/TypeScript-DOM-lib-generator)
 
-### Contributing
+## Contributing
 See [conventions](./src/main/scala/README.md)

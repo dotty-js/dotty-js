@@ -15,12 +15,12 @@ end ImageEncodeOptions
 @js.native
 abstract trait OffscreenCanvasProperties extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height)
-    * Unnsigned
+    * integer non-negative
     */
   var height: Int = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/width)
-    * Unnsigned
+    * integer non-negative
     */
   var width: Int = js.native
 end OffscreenCanvasProperties
@@ -28,7 +28,8 @@ end OffscreenCanvasProperties
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas#instance_methods) */
 @js.native
 private abstract trait OffscreenCanvasMethods
-    extends js.Object with CanvasContextMethods[OffscreenCanvasRenderingContext2D]:
+    extends js.Object
+    with CanvasContextMethods[OffscreenCanvasRenderingContext2D]:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob) */
   def convertToBlob(options: ImageEncodeOptions): js.Promise[Blob]
 
@@ -38,7 +39,7 @@ end OffscreenCanvasMethods
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas#events) */
 private abstract trait OffscreenCanvasEvents:
-  // TODO
+// TODO
 end OffscreenCanvasEvents
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) */
