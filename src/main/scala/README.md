@@ -4,7 +4,7 @@
 Bindings to headless audiovisual and input web apis, these APIs are not excluisive of browsers, examples are `@std/webgpu` and `node-canvas`
 
 Packages
-* web.geometry includes 2D and 3D geometry like [DOMMatrix](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix)
+* [web.geometry](https://developer.mozilla.org/en-US/docs/Web/API/Geometry_Interfaces)
 * [web.audio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 * [web.input.gamepad](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API)
 * [web.graphics.canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
