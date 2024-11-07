@@ -15,17 +15,10 @@ import dottyjs.web.graphics.context.bitmap.ImageBitmapContextAttributes
 import dottyjs.web.graphics.context.webgl.WebGLRenderingContext
 import dottyjs.web.graphics.context.webgl.WebGLContextAttributes
 import dottyjs.web.graphics.context.webgl2.WebGL2RenderingContext
-import dottyjs.web.graphics.context.webgl.{WebGLRenderingContext, WebGLContextAttributes}
-import dottyjs.web.graphics.canvas.OffscreenCanvas
-import dottyjs.web.graphics.context.canvas2d.{CanvasRenderingContext2D, Canvas2dContext2DAttributes}
-import dottyjs.web.graphics.context.bitmap.{ImageBitmapContextAttributes, ImageBitmapRenderingContext}
-import dottyjs.web.graphics.context.webgl2.WebGL2RenderingContext
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_properties) */
 @js.native
-@JSGlobal
-/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) */
-abstract class HTMLCanvasElement extends HTMLElement {
-
+private abstract trait HTMLCanvasElementProperties extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width)
     * Natural number
     */
@@ -35,7 +28,11 @@ abstract class HTMLCanvasElement extends HTMLElement {
     * Natural number
     */
   var height: Int = js.native
+end HTMLCanvasElementProperties
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_methods) */
+@js.native
+private abstract trait HTMLCanvasElementMethods extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream) */
   def captureStream(): MediaStream = js.native
 
@@ -47,7 +44,7 @@ abstract class HTMLCanvasElement extends HTMLElement {
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
   def getContext(
-      contextId: "2d", options:Canvas2dContext2DAttributes
+      contextId: "2d", options: Canvas2dContext2DAttributes
   ): CanvasRenderingContext2D | Null = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
@@ -72,8 +69,7 @@ abstract class HTMLCanvasElement extends HTMLElement {
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) */
   def getContext(
-      contextId: "bitmaprenderer",
-      options: ImageBitmapContextAttributes
+      contextId: "bitmaprenderer", options: ImageBitmapContextAttributes
   ): ImageBitmapRenderingContext | Null
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL) */
@@ -104,4 +100,17 @@ abstract class HTMLCanvasElement extends HTMLElement {
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen) */
   def transferControlToOffscreen(): OffscreenCanvas = js.native
-}
+end HTMLCanvasElementMethods
+
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#events) */
+@js.native
+private abstract trait HTMLCanvasElementEvents extends js.Object:
+// TODO
+end HTMLCanvasElementEvents
+
+@js.native
+@JSGlobal
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) */
+abstract class HTMLCanvasElement
+    extends HTMLElement with HTMLCanvasElementProperties
+    with HTMLCanvasElementMethods with HTMLCanvasElementEvents
