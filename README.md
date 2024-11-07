@@ -37,22 +37,5 @@ MDN is the ultimate reference source, while creating dotty-js bindings [found MD
 * [MDN Web API](https://developer.mozilla.org/en-US/docs/Web/API)   
 * [TypeScript-DOM-lib-generator](https://github.com/microsoft/TypeScript-DOM-lib-generator)
 
-## Binding styles preferences
-* Docstrings
-   * All bindings should refer to their closest MDN reference in docstrings as markdown links
-   * Docstrings should only contain MDN reference links, except for rare cases of scala.js specific technical comments, for details consult the online MDN reference link in docstring of each binding
-
-* Numbers
-   * For fractionals use `Double`
-   * For integers use `Int` example `window.innerWidth` or `array.length`
-   * If unsure whether to use `Int` or `Double`, check MDN docs for that value or property, [example](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight#value).
-
-* Methods
-   * For binding to js polymorphic methods prefer scala method overloads
-   * For methods with optional parameters prefer extra overloads excluding those params instead of using default paramenters, add as many overloads as required for readability
-
-* Classes
-   * For js classes use scala classes, in other words anything created with `new` keyword on js will map to a scala class
-
-* Literal Objects
-   * For js literal objects use scala traits, in other words anything created with `{}` on js will map to a scala trait
+### Contributing
+See [conventions](./src/main/scala/README.md)
