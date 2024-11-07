@@ -6,7 +6,6 @@ import scala.scalajs.js.annotation._
 // MDN reference for DOMQuad was in progress when I wrote this code, extracted mainly from tslib
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) */
-@js.native
 trait DOMQuadInit extends js.Object:
     var p1: DOMPointInit
     var p2: DOMPointInit
@@ -15,7 +14,6 @@ trait DOMQuadInit extends js.Object:
 end DOMQuadInit
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) */
-@js.native
 trait DOMQuadJSON extends js.Object:
     var p1: DOMPointMutable
     var p2: DOMPointMutable
