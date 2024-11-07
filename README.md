@@ -22,7 +22,6 @@ Provide bindings for game-like apis for graphics, audio and input, as well the s
    * Input
       * [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) (roadmap)
 * DOM
-   * [Window API](https://developer.mozilla.org/en-US/docs/Web/API/Window) (roadmap)
    * [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) (testing)
 
 ## Why not full browser API?
