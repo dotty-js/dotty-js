@@ -34,7 +34,8 @@ abstract trait DOMPoint extends DOMPointJSON:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON) */
   def toJSON(): DOMPointJSON = js.native
 
-  // TODO DOMPointReadOnly.matrixTransform will be implemented in a future release
+  /** DOMPointReadOnly.matrixTransform will be implemented in a future release */
+  def matrixTransform(matrix: DOMMatrixInit): DOMPoint = js.native
 end DOMPoint
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly) */

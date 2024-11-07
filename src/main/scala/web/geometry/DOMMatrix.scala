@@ -18,5 +18,21 @@ trait DOMMatrix2DInit extends js.Object:
   var m41: js.UndefOr[Double] = js.undefined
   var m42: js.UndefOr[Double] = js.undefined
 end DOMMatrix2DInit
+
+// Converted from tslib
+trait DOMMatrixInit extends js.Object with DOMMatrix2DInit:
+  var is2D: js.UndefOr[Boolean] = js.undefined
+  var m13: js.UndefOr[Double] = js.undefined
+  var m14: js.UndefOr[Double] = js.undefined
+  var m23: js.UndefOr[Double] = js.undefined
+  var m24: js.UndefOr[Double] = js.undefined
+  var m31: js.UndefOr[Double] = js.undefined
+  var m32: js.UndefOr[Double] = js.undefined
+  var m33: js.UndefOr[Double] = js.undefined
+  var m34: js.UndefOr[Double] = js.undefined
+  var m43: js.UndefOr[Double] = js.undefined
+  var m44: js.UndefOr[Double] = js.undefined
+end DOMMatrixInit
+
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix) */
 class DOMMatrix extends js.Object
