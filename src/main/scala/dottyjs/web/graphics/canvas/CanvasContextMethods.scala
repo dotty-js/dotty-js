@@ -15,23 +15,22 @@ type RenderingContext2D =
   (CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D)
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
-@js.native
 abstract trait CanvasContextMethods[T <: RenderingContext2D] extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
-  def getContext(contextId: "2d"): T | Null = js.native
+  def getContext(contextId: "2d"): T | Null
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
   def getContext(
       contextId: "2d", options: CanvasRenderingContext2DAttributes
-  ): T | Null = js.native
+  ): T | Null
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
-  def getContext(contextId: "webgl"): WebGLRenderingContext | Null = js.native
+  def getContext(contextId: "webgl"): WebGLRenderingContext | Null
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
   def getContext(
       contextId: "webgl", options: WebGLRenderingContextAttributes
-  ): WebGLRenderingContext | Null = js.native
+  ): WebGLRenderingContext | Null
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
   def getContext(contextId: "webgl2"): WebGL2RenderingContext | Null
