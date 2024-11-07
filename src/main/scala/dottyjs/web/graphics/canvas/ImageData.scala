@@ -8,7 +8,6 @@ import scala.scalajs.js.typedarray.Uint8ClampedArray
 @JSGlobal
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ImageData) */
 class ImageData extends js.Object:
-
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData) */
   def this(width: Int, height: Int) = this()
 

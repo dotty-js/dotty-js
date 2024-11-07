@@ -10,11 +10,11 @@ type GlobalCompositeOperation = "color" | "color-burn" | "color-dodge" |
   "overlay" | "saturation" | "screen" | "soft-light" | "source-atop" |
   "source-in" | "source-out" | "source-over" | "xor"
 
-@js.native
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#compositing) */
 private abstract trait CanvasCompositing extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalAlpha) */
-  var globalAlpha: Double = js.native
+  var globalAlpha: Double
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) */
-  var globalCompositeOperation: GlobalCompositeOperation = js.native
+  var globalCompositeOperation: GlobalCompositeOperation
 end CanvasCompositing

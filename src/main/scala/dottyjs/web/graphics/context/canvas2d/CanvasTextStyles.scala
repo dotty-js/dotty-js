@@ -28,38 +28,38 @@ type CanvasTextBaseline = "alphabetic" | "bottom" | "hanging" | "ideographic" |
 type CanvasTextRendering = "auto" | "geometricPrecision" |
   "optimizeLegibility" | "optimizeSpeed"
 
-@js.native
-private abstract trait CanvasTextDrawingStyles extends js.Object:
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/direction) */
-  var direction: CanvasDirection = js.native
-
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#text_styles) */
+private abstract trait CanvasTextStyles extends js.Object:
   // TODO css type safe string https://developer.mozilla.org/en-US/docs/Web/CSS/font
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/font) */
-  var font: String = js.native
+  var font: String
 
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontKerning) */
-  var fontKerning: CanvasFontKerning = js.native
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign) */
+  var textAlign: CanvasTextAlign
 
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontStretch) */
-  var fontStretch: CanvasFontStretch = js.native
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textBaseline) */
+  var textBaseline: CanvasTextBaseline
 
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps) */
-  var fontVariantCaps: CanvasFontVariantCaps = js.native
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/direction) */
+  var direction: CanvasDirection
 
   // TODO css type safe string https://developer.mozilla.org/en-US/docs/Web/CSS/length
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/letterSpacing) */
-  var letterSpacing: String = js.native
+  var letterSpacing: String
 
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign) */
-  var textAlign: CanvasTextAlign = js.native
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontKerning) */
+  var fontKerning: CanvasFontKerning
 
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textBaseline) */
-  var textBaseline: CanvasTextBaseline = js.native
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontStretch) */
+  var fontStretch: CanvasFontStretch
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps) */
+  var fontVariantCaps: CanvasFontVariantCaps
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textRendering) */
-  var textRendering: CanvasTextRendering = js.native
+  var textRendering: CanvasTextRendering
 
   // TODO css type safe string https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/wordSpacing) */
-  var wordSpacing: String = js.native
-end CanvasTextDrawingStyles
+  var wordSpacing: String
+end CanvasTextStyles
