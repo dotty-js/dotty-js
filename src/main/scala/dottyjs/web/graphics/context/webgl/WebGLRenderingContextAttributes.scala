@@ -6,7 +6,7 @@ import dottyjs.web.graphics.canvas.CanvasColorSpace
 
 type WebGLPowerPreference = "default" | "high-performance" | "low-power"
 
-trait WebGLContextAttributes extends js.Object:
+trait WebGLRenderingContextAttributes extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#alpha_2) */
   var alpha: js.UndefOr[Boolean] = js.undefined
 
@@ -35,4 +35,4 @@ trait WebGLContextAttributes extends js.Object:
   var preserveDrawingBuffer: js.UndefOr[Boolean] = js.undefined
 
   var xrCompatible: js.UndefOr[Boolean] = js.undefined
-end WebGLContextAttributes
+end WebGLRenderingContextAttributes
