@@ -30,18 +30,18 @@ trait DOMPointJSON extends js.Object:
 end DOMPointJSON
 
 @js.native
-abstract trait DOMPoint extends DOMPointJSON:
+abstract trait DOMPointMethods extends DOMPointJSON:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON) */
   def toJSON(): DOMPointJSON = js.native
 
   /** DOMPointReadOnly.matrixTransform will be implemented in a future release */
-  def matrixTransform(matrix: DOMMatrixInit): DOMPoint = js.native
-end DOMPoint
+  def matrixTransform(matrix: DOMMatrixInit): DOMPointMethods = js.native
+end DOMPointMethods
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly) */
 @js.native
 @JSGlobal
-class DOMPointReadOnly extends DOMPoint:
+class DOMPointReadOnly extends DOMPointMethods:
   // intentionally excluded new DOMPointReadOnly(x) constructor
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
@@ -63,13 +63,13 @@ end DOMPointReadOnly
 @JSGlobal
 object DOMPointReadOnly extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/fromPoint_static) */
-  def fromPoint(other: DOMPointInit): DOMPointMutable = js.native
+  def fromPoint(other: DOMPointInit): DOMPoint = js.native
 end DOMPointReadOnly
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint) */
 @js.native
-@JSGlobal("DOMPoint")
-class DOMPointMutable extends DOMPoint:
+@JSGlobal
+class DOMPoint extends DOMPointMethods:
   // intentionally excluded new DOMPoint(x) constructor
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
@@ -85,11 +85,11 @@ class DOMPointMutable extends DOMPoint:
   var y: Double = js.native
   var z: Double = js.native
   var w: Double = js.native
-end DOMPointMutable
+end DOMPoint
 
 @js.native
 @JSGlobal
-object DOMPointMutable extends js.Object:
+object DOMPoint extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/fromPoint_static) */
-  def fromPoint(other: DOMPointInit): DOMPointMutable = js.native
-end DOMPointMutable
+  def fromPoint(other: DOMPointInit): DOMPoint = js.native
+end DOMPoint

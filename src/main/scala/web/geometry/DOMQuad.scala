@@ -15,10 +15,10 @@ end DOMQuadInit
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) */
 trait DOMQuadJSON extends js.Object:
-    var p1: DOMPointMutable
-    var p2: DOMPointMutable
-    var p3: DOMPointMutable
-    var p4: DOMPointMutable
+    var p1: DOMPoint
+    var p2: DOMPoint
+    var p3: DOMPoint
+    var p4: DOMPoint
 end DOMQuadJSON
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) */
@@ -30,7 +30,7 @@ class DOMQuad(
     val p3: DOMPointInit,
     val p4: DOMPointInit
 ) extends js.Object:
-  def getBounds(): DOMRectMutable = js.native
+  def getBounds(): DOMRect = js.native
   def toJSON(): DOMQuadJSON = js.native
 end DOMQuad
 

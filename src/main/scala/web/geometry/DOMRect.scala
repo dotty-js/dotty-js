@@ -45,17 +45,17 @@ abstract trait DOMRectJSON extends js.Object:
 end DOMRectJSON
 
 @js.native
-abstract trait DOMRect extends DOMRectJSON:
+abstract trait DOMRectMethods extends DOMRectJSON:
   // Not on MDN but tested on Chromium also appeared on tslib
   def toJSON(): DOMRectJSON = js.native
-end DOMRect
+end DOMRectMethods
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly) */
 @js.native
 @JSGlobal
 class DOMRectReadOnly(
     val x: Double, val y: Double, val width: Double, val height: Double
-) extends DOMRect:
+) extends DOMRectMethods:
   val top: Double = js.native
   val right: Double = js.native
   val bottom: Double = js.native
@@ -71,19 +71,19 @@ end DOMRectReadOnly
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) */
 @js.native
-@JSGlobal("DOMRect")
-class DOMRectMutable(
+@JSGlobal
+class DOMRect(
     var x: Double, var y: Double, var width: Double, var height: Double
-) extends DOMRect:
+) extends DOMRectMethods:
   var top: Double = js.native
   var right: Double = js.native
   var bottom: Double = js.native
   var left: Double = js.native
-end DOMRectMutable
+end DOMRect
 
 @js.native
 @JSGlobal
-object DOMRectMutable extends js.Object:
+object DOMRect extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/fromRect_static) */
-  def fromRect(other: DOMRectInit): DOMRectMutable = js.native
-end DOMRectMutable
+  def fromRect(other: DOMRectInit): DOMRect = js.native
+end DOMRect
