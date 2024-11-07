@@ -4,7 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{Float32Array, Float64Array}
 
-// Converted from tslib
+// Matches tslib iterface
 trait DOMMatrix2DInit extends js.Object:
   var a: js.UndefOr[Double] = js.undefined
   var b: js.UndefOr[Double] = js.undefined
@@ -20,7 +20,7 @@ trait DOMMatrix2DInit extends js.Object:
   var m42: js.UndefOr[Double] = js.undefined
 end DOMMatrix2DInit
 
-// Converted from tslib
+// Matches tslib iterface
 trait DOMMatrixInit extends js.Object with DOMMatrix2DInit:
   var is2D: js.UndefOr[Boolean] = js.undefined
   var m13: js.UndefOr[Double] = js.undefined
@@ -37,41 +37,6 @@ end DOMMatrixInit
 
 /* [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#instance_properties) */
 private abstract trait DOMMatrixProperties extends js.Object:
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#is2d) */
-  def is2D: Boolean
-
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#isidentity) */
-  def isIdentity: Boolean
-
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#a) */
-  def a: Double
-  def b: Double
-  def c: Double
-  def d: Double
-  def e: Double
-  def f: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#m11) */
-  def m11: Double
-  def m12: Double
-  def m13: Double
-  def m14: Double
-  def m21: Double
-  def m22: Double
-  def m23: Double
-  def m24: Double
-  def m31: Double
-  def m32: Double
-  def m33: Double
-  def m34: Double
-  def m41: Double
-  def m42: Double
-  def m43: Double
-  def m44: Double
-end DOMMatrixProperties
-
-// TODO investiage type level derived from DOMMatrixProperties
-private abstract trait DOMMatrixJSON extends js.Object with DOMMatrixProperties:
   var is2D: Boolean
 
   var isIdentity: Boolean
@@ -99,7 +64,7 @@ private abstract trait DOMMatrixJSON extends js.Object with DOMMatrixProperties:
   var m42: Double
   var m43: Double
   var m44: Double
-end DOMMatrixJSON
+end DOMMatrixProperties
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#instance_methods) */
 @js.native
@@ -164,7 +129,7 @@ abstract trait DOMMatrixReadOnlyMethods extends js.Object:
   def toFloat32Array(): Float32Array = js.native
   def toFloat64Array(): Float64Array = js.native
 
-  def toJSON(): DOMMatrixJSON = js.native
+  def toJSON(): DOMMatrixProperties = js.native
 
   def transformPoint(point: DOMPointInit): DOMPoint = js.native
 
@@ -223,7 +188,7 @@ end DOMMatrixReadOnly
 @js.native
 @JSGlobal
 class DOMMatrix
-    extends js.Object with DOMMatrixJSON with DOMMatrixReadOnlyMethods:
+    extends js.Object with DOMMatrixProperties with DOMMatrixReadOnlyMethods:
   // TODO css transform string or 6 | 16 tuple
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/DOMMatrix) */
   def this(init: js.Array[Double] | String) = this()

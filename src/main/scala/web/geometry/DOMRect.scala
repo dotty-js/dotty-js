@@ -13,33 +13,6 @@ end DOMRectInit
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly#instance_properties) */
 private abstract trait DOMRectProperties extends js.Object:
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/x) */
-  def x: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/y) */
-  def y: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/width) */
-  def width: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/height) */
-  def height: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/top) */
-  def top: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/right) */
-  def right: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/bottom) */
-  def bottom: Double
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/left) */
-  def left: Double
-end DOMRectProperties
-
-/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly#instance_properties) */
-private abstract trait DOMRectJson extends js.Object with DOMRectProperties:
   var x: Double
   var y: Double
   var width: Double
@@ -48,7 +21,7 @@ private abstract trait DOMRectJson extends js.Object with DOMRectProperties:
   var right: Double
   var bottom: Double
   var left: Double
-end DOMRectJson
+end DOMRectProperties
 
 /** TODO MDN Rereference not available */
 @js.native
@@ -89,7 +62,7 @@ class DOMRect(
     var width: Double,
     /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/height) */
     var height: Double
-) extends js.Object with DOMRectJson with DOMRectMethods:
+) extends js.Object with DOMRectProperties with DOMRectMethods:
   var top: Double = js.native
   var right: Double = js.native
   var bottom: Double = js.native

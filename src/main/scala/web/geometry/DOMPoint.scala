@@ -13,19 +13,11 @@ end DOMPointInit
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint#instance_properties) */
 private abstract trait DOMPointProperties extends js.Object:
-  def x: Double
-  def y: Double
-  def z: Double
-  def w: Double
-end DOMPointProperties
-
-/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON#return_value) */
-private abstract trait DOMPointJSON extends js.Object with DOMPointProperties:
   var x: Double
   var y: Double
   var z: Double
   var w: Double
-end DOMPointJSON
+end DOMPointProperties
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly#instance_methods) */
 @js.native
@@ -34,7 +26,7 @@ private abstract trait DOMPointMethods extends js.Object:
   def matrixTransform(matrix: DOMMatrixInit): DOMPointMethods = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON) */
-  def toJSON(): DOMPointJSON = js.native
+  def toJSON(): DOMPointProperties = js.native
 end DOMPointMethods
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly) */
