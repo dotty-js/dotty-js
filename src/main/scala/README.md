@@ -13,12 +13,8 @@ end DOMPointReadOnly
 ```
 Some entities have not yet any MDN reference, can be marked as `TODO` and `TODO N/A`
 ```scala
-/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly#instance_methods) */
-@js.native
-private abstract trait DOMPointMethods extends js.Object:
   /** MDN Reference TODO N/A*/
   def matrixTransform(matrix: DOMMatrixInit): DOMPointMethods = js.native
-end DOMPointMethods
 ```
 
 Some extra information can be added to the docstring, example when Doubles or Ints are coerced to natural or unsigned numbers
@@ -30,13 +26,6 @@ Some extra information can be added to the docstring, example when Doubles or In
   var height: Int = js.native
 ```
 
-```scala
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getLineDash)
-    * @returns array of non-negative numbers
-    */
-  def getLineDash(): js.Array[Double]
-```
-
 ### Numbers
 For whole use `Int` like `canvas.height` or `array.length`
 
@@ -44,15 +33,15 @@ For fractional use `Double`
 
 Use MDN docs for reference of numeric constraints example [Canvas height](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/height).
 
-### Literal types
+### Literal types and Unions
 JS literal number and strings map to Scala 3 literal values
 
-### Unions
 JS unions map to Scala 3 union types
 ```ts
 // TS
 type CanvasLineCap = 'butt' | 'round' | 'square'
 ```
+⥥⥥⥥
 ```scala
 type CanvasLineCap = "butt" | "round" | "square"
 ```
@@ -79,6 +68,7 @@ Js methods with literal number or string overloads map to Scala 3 literal single
   getContext(contextId: "webgl"): WebGLRenderingContext | null
   getContext(contextId: "webgl2"): WebGL2RenderingContext | null
 ```
+⥥⥥⥥
 ```scala
   def getContext(contextId: "2d"): OffscreenCanvasRenderingContext2D | Null
   def getContext(contextId: "webgl"): WebGLRenderingContext | Null
@@ -112,6 +102,7 @@ interface DOMRectInit {
     y?: number;
 }
 ```
+⥥⥥⥥
 ```scala
 trait DOMRectInit extends js.Object:
   def height: js.UndefOr[Double] = js.undefined
