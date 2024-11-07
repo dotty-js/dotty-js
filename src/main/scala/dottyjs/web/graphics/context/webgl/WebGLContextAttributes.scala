@@ -1,7 +1,7 @@
 package dottyjs.web.graphics.context.webgl
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
+
 import dottyjs.web.graphics.canvas.CanvasColorSpace
 
 type WebGLPowerPreference = "default" | "high-performance" | "low-power"

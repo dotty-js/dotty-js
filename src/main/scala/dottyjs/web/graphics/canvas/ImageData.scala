@@ -1,10 +1,8 @@
 package dottyjs.web.graphics.canvas
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
-// IMAGE DATA is a constituent of web canvas api
-
+// TODO make class
 @js.native
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ImageData) */
 trait ImageData extends js.Object:

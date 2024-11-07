@@ -1,16 +1,15 @@
 package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
-// ** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap#value) */
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap#value) */
 type CanvasLineCap = "butt" | "round" | "square"
 
-// ** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin#value) */
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin#value) */
 type CanvasLineJoin = "round" | "bevel" | "miter"
 
 @js.native
-trait CanvasPathDrawingStyles extends js.Object:
+private abstract trait CanvasPathDrawingStyles extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineCap) */
   var lineCap: CanvasLineCap
 

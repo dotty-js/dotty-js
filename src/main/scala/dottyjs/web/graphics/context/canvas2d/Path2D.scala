@@ -2,8 +2,9 @@ package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import dottyjs.web.graphics.context.canvas2d.CanvasPath
+
 import dottyjs.web.geometry.DOMMatrix2DInit
+import dottyjs.web.graphics.context.canvas2d.CanvasPath
 
 @js.native
 @JSGlobal
