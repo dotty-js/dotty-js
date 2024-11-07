@@ -13,7 +13,7 @@ import dottyjs.dom.HTMLCanvasElement
 type CanvasImageSource = HTMLElement | HTMLImageElement | HTMLVideoElement |
   HTMLCanvasElement | ImageBitmap
 
-// CanvasImageSource TODO add SVGImageElement, VideoFrame@js.native
+// CanvasImageSource TODO add SVGImageElement, VideoFrame
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#drawing_images) */
 private abstract trait CanvasImageDraw extends js.Object:

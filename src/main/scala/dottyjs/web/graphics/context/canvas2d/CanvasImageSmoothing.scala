@@ -2,13 +2,13 @@ package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
 
-type ImageSmoothingQuality = "high" | "low" | "medium"; @js.native
+type ImageSmoothingQuality = "high" | "low" | "medium"
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#image_smoothing) */
 private abstract trait CanvasImageSmoothing extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled) */
-  var imageSmoothingEnabled: Boolean = js.native
+  var imageSmoothingEnabled: Boolean
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality) */
-  var imageSmoothingQuality: ImageSmoothingQuality = js.native
+  var imageSmoothingQuality: ImageSmoothingQuality
 end CanvasImageSmoothing

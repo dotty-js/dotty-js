@@ -8,11 +8,10 @@ import dottyjs.dom.HTMLCanvasElement
 import dottyjs.dom.HTMLCanvasElement
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext) */
-@js.native
-trait ImageBitmapRenderingContext extends js.Object:
+abstract trait ImageBitmapRenderingContext extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/canvas) */
-  val canvas: HTMLCanvasElement | OffscreenCanvas = js.native
+  val canvas: HTMLCanvasElement | OffscreenCanvas
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/transferFromImageBitmap) */
-  def transferFromImageBitmap(bitmap: ImageBitmap): Unit = js.native
+  def transferFromImageBitmap(bitmap: ImageBitmap): Unit
 end ImageBitmapRenderingContext

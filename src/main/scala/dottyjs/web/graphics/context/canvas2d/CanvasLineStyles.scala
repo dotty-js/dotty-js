@@ -9,7 +9,6 @@ type CanvasLineCap = "butt" | "round" | "square"
 type CanvasLineJoin = "round" | "bevel" | "miter"
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#line_styles) */
-@js.native
 private abstract trait CanvasLineStyles extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineWidth) */
   var lineWidth: Double
