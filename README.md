@@ -1,4 +1,4 @@
-# Scala3.js bindings for browser graphics, audio and input
+# Scala 3 bindings for browser graphics, audio and input
 
 ## Diferences with [scala-js-dom](https://github.com/scala-js/scala-js-dom)
 * `scala-js-dom` targets all javascript browser APIs, whereas `dotty-js` targets a subset of game-like browser apis like canvas, webgl, audio, gamepad and window
