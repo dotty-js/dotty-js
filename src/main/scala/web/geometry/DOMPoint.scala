@@ -5,60 +5,69 @@ import scala.scalajs.js.annotation._
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/fromPoint_static#sourcepoint) */
 trait DOMPointInit extends js.Object:
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/x) */
   def x: js.UndefOr[Double] = js.undefined
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/y) */
   def y: js.UndefOr[Double] = js.undefined
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/z) */
   def z: js.UndefOr[Double] = js.undefined
-
-  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w) */
   def w: js.UndefOr[Double] = js.undefined
 end DOMPointInit
 
-/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON#return_value) */
-trait DOMPointJSON extends js.Object:
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint#instance_properties) */
+private abstract trait DOMPointProperties extends js.Object:
   def x: Double
-
   def y: Double
-
   def z: Double
-
   def w: Double
+end DOMPointProperties
+
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON#return_value) */
+private abstract trait DOMPointJSON extends js.Object with DOMPointProperties:
+  var x: Double
+  var y: Double
+  var z: Double
+  var w: Double
 end DOMPointJSON
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly#instance_methods) */
 @js.native
-abstract trait DOMPointMethods extends DOMPointJSON:
+private abstract trait DOMPointMethods extends js.Object:
+  /** TODO MDN Reference */
+  def matrixTransform(matrix: DOMMatrixInit): DOMPointMethods = js.native
+
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON) */
   def toJSON(): DOMPointJSON = js.native
-
-  /** DOMPointReadOnly.matrixTransform will be implemented in a future release */
-  def matrixTransform(matrix: DOMMatrixInit): DOMPointMethods = js.native
 end DOMPointMethods
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly) */
 @js.native
 @JSGlobal
-class DOMPointReadOnly extends DOMPointMethods:
-  // intentionally excluded new DOMPointReadOnly(x) constructor
+class DOMPointReadOnly
+    extends js.Object with DOMPointProperties with DOMPointMethods:
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly) */
+  def this(x: Double) = this()
 
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly) */
   def this(x: Double, y: Double) = this()
 
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly) */
   def this(x: Double, y: Double, z: Double) = this()
 
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly) */
   def this(x: Double, y: Double, z: Double, w: Double) = this()
 
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/x) */
   val x: Double = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/y) */
   val y: Double = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/z) */
   val z: Double = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w) */
   val w: Double = js.native
 end DOMPointReadOnly
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly#static_methods) */
 @js.native
 @JSGlobal
 object DOMPointReadOnly extends js.Object:
@@ -69,8 +78,9 @@ end DOMPointReadOnly
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint) */
 @js.native
 @JSGlobal
-class DOMPoint extends DOMPointMethods:
-  // intentionally excluded new DOMPoint(x) constructor
+class DOMPoint extends js.Object with DOMPointProperties with DOMPointMethods:
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
+  def this(x: Double) = this()
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
   def this(x: Double, y: Double) = this()
@@ -81,12 +91,20 @@ class DOMPoint extends DOMPointMethods:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint) */
   def this(x: Double, y: Double, z: Double, w: Double) = this()
 
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/x) */
   var x: Double = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/y) */
   var y: Double = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/z) */
   var z: Double = js.native
+
+  /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/w) */
   var w: Double = js.native
 end DOMPoint
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint#static_methods) */
 @js.native
 @JSGlobal
 object DOMPoint extends js.Object:

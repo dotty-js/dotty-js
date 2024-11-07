@@ -35,8 +35,8 @@ trait DOMMatrixInit extends js.Object with DOMMatrix2DInit:
   var m44: js.UndefOr[Double] = js.undefined
 end DOMMatrixInit
 
-@js.native
-abstract trait DOMMatrixFields extends js.Object:
+/* [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#instance_properties) */
+private abstract trait DOMMatrixProperties extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#is2d) */
   def is2D: Boolean
 
@@ -68,8 +68,40 @@ abstract trait DOMMatrixFields extends js.Object:
   def m42: Double
   def m43: Double
   def m44: Double
-end DOMMatrixFields
+end DOMMatrixProperties
 
+// TODO investiage type level derived from DOMMatrixProperties
+private abstract trait DOMMatrixJSON extends js.Object with DOMMatrixProperties:
+  var is2D: Boolean
+
+  var isIdentity: Boolean
+
+  var a: Double
+  var b: Double
+  var c: Double
+  var d: Double
+  var e: Double
+  var f: Double
+
+  var m11: Double
+  var m12: Double
+  var m13: Double
+  var m14: Double
+  var m21: Double
+  var m22: Double
+  var m23: Double
+  var m24: Double
+  var m31: Double
+  var m32: Double
+  var m33: Double
+  var m34: Double
+  var m41: Double
+  var m42: Double
+  var m43: Double
+  var m44: Double
+end DOMMatrixJSON
+
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#instance_methods) */
 @js.native
 abstract trait DOMMatrixReadOnlyMethods extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX) */
@@ -91,21 +123,26 @@ abstract trait DOMMatrixReadOnlyMethods extends js.Object:
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale) */
   def scale(scaleX: Double): DOMMatrix = js.native
+
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale) */
   def scale(scaleX: Double, scaleY: Double): DOMMatrix = js.native
+
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale) */
   def scale(
       scaleX: Double, scaleY: Double, scaleZ: Double
   ): DOMMatrix = js.native
+
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale) */
   def scale(
       scaleX: Double, scaleY: Double, scaleZ: Double, originX: Double
   ): DOMMatrix = js.native
+
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale) */
   def scale(
       scaleX: Double, scaleY: Double, scaleZ: Double, originX: Double,
       originY: Double
   ): DOMMatrix = js.native
+
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale) */
   def scale(
       scaleX: Double, scaleY: Double, scaleZ: Double, originX: Double,
@@ -127,8 +164,7 @@ abstract trait DOMMatrixReadOnlyMethods extends js.Object:
   def toFloat32Array(): Float32Array = js.native
   def toFloat64Array(): Float64Array = js.native
 
-  // TODO DOMMatrixJSON
-  def toJSON(): js.Object = js.native
+  def toJSON(): DOMMatrixJSON = js.native
 
   def transformPoint(point: DOMPointInit): DOMPoint = js.native
 
@@ -137,6 +173,7 @@ abstract trait DOMMatrixReadOnlyMethods extends js.Object:
   def translate(tx: Double, ty: Double, tz: Double): DOMMatrix = js.native
 end DOMMatrixReadOnlyMethods
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#static_methods) */
 @js.native
 @JSGlobal
 object DOMMatrixReadOnly extends js.Object:
@@ -147,7 +184,8 @@ end DOMMatrixReadOnly
 
 @js.native
 @JSGlobal
-class DOMMatrixReadOnly extends DOMMatrixFields with DOMMatrixReadOnlyMethods:
+class DOMMatrixReadOnly
+    extends js.Object with DOMMatrixProperties with DOMMatrixReadOnlyMethods:
   // TODO css transform string or 6 | 16 tuple
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly) */
   def this(init: js.Array[Double] | String) = this()
@@ -183,8 +221,9 @@ end DOMMatrixReadOnly
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix) */
 @js.native
-@JSGlobal("DOMMatrix")
-class DOMMatrix extends DOMMatrixFields with DOMMatrixReadOnlyMethods:
+@JSGlobal
+class DOMMatrix
+    extends js.Object with DOMMatrixJSON with DOMMatrixReadOnlyMethods:
   // TODO css transform string or 6 | 16 tuple
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/DOMMatrix) */
   def this(init: js.Array[Double] | String) = this()
@@ -275,6 +314,7 @@ class DOMMatrix extends DOMMatrixFields with DOMMatrixReadOnlyMethods:
   def translateSelf(tx: Double, ty: Double, tz: Double): DOMMatrix = js.native
 end DOMMatrix
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#static_methods) */
 @js.native
 @JSGlobal
 object DOMMatrix extends js.Object:

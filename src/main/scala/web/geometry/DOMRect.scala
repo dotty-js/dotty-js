@@ -5,20 +5,14 @@ import scala.scalajs.js.annotation._
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/fromRect_static#rectangle) */
 trait DOMRectInit extends js.Object:
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/height) */
   def height: js.UndefOr[Double] = js.undefined
-
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/width) */
   def width: js.UndefOr[Double] = js.undefined
-
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/x) */
   def x: js.UndefOr[Double] = js.undefined
-
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/y) */
   def y: js.UndefOr[Double] = js.undefined
 end DOMRectInit
 
-abstract trait DOMRectJSON extends js.Object:
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly#instance_properties) */
+private abstract trait DOMRectProperties extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/x) */
   def x: Double
 
@@ -42,12 +36,25 @@ abstract trait DOMRectJSON extends js.Object:
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/left) */
   def left: Double
-end DOMRectJSON
+end DOMRectProperties
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly#instance_properties) */
+private abstract trait DOMRectJson extends js.Object with DOMRectProperties:
+  var x: Double
+  var y: Double
+  var width: Double
+  var height: Double
+  var top: Double
+  var right: Double
+  var bottom: Double
+  var left: Double
+end DOMRectJson
+
+/** TODO MDN Rereference not available */
 @js.native
-abstract trait DOMRectMethods extends DOMRectJSON:
+private abstract trait DOMRectMethods extends js.Object:
   // Not on MDN but tested on Chromium also appeared on tslib
-  def toJSON(): DOMRectJSON = js.native
+  def toJSON(): DOMRectProperties = js.native
 end DOMRectMethods
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly) */
@@ -55,13 +62,14 @@ end DOMRectMethods
 @JSGlobal
 class DOMRectReadOnly(
     val x: Double, val y: Double, val width: Double, val height: Double
-) extends DOMRectMethods:
+) extends js.Object with DOMRectProperties with DOMRectMethods:
   val top: Double = js.native
   val right: Double = js.native
   val bottom: Double = js.native
   val left: Double = js.native
 end DOMRectReadOnly
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly#static_methods) */
 @js.native
 @JSGlobal
 object DOMRectReadOnly extends js.Object:
@@ -73,14 +81,22 @@ end DOMRectReadOnly
 @js.native
 @JSGlobal
 class DOMRect(
-    var x: Double, var y: Double, var width: Double, var height: Double
-) extends DOMRectMethods:
+    /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/x) */
+    var x: Double,
+    /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/y) */
+    var y: Double,
+    /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/width) */
+    var width: Double,
+    /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/height) */
+    var height: Double
+) extends js.Object with DOMRectJson with DOMRectMethods:
   var top: Double = js.native
   var right: Double = js.native
   var bottom: Double = js.native
   var left: Double = js.native
 end DOMRect
 
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect#static_methods) */
 @js.native
 @JSGlobal
 object DOMRect extends js.Object:
