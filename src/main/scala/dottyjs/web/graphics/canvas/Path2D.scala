@@ -1,4 +1,4 @@
-package dottyjs.web.graphics.context.canvas2d
+package dottyjs.web.graphics.canvas
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
@@ -9,7 +9,7 @@ import dottyjs.web.graphics.context.canvas2d.CanvasPath
 @js.native
 @JSGlobal
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D) */
-class Path2D extends CanvasPath:
+class Path2D extends js.Object with CanvasPath:
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Path2D/Path2D#path) */
   def this(path: Path2D) = this()
