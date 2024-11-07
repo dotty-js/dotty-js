@@ -1,11 +1,11 @@
 package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
+
 import dottyjs.web.geometry.{DOMMatrix, DOMMatrix2DInit}
 
 @js.native
-trait CanvasTransform extends js.Object:
+private abstract trait CanvasTransform extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getTransform) */
   def getTransform(): DOMMatrix = js.native
 

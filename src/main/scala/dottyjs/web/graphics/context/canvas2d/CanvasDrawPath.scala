@@ -1,13 +1,12 @@
 package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 import org.scalajs.dom.CanvasFillRule
 
-//  TODO - planaro CanvasFillRule
+//  TODO CanvasFillRule
 
 @js.native
-trait CanvasDrawPath extends js.Object:
+private abstract trait CanvasDrawPath extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/beginPath) */
   def beginPath(): Unit = js.native
 
@@ -39,15 +38,17 @@ trait CanvasDrawPath extends js.Object:
   def isPointInPath(x: Double, y: Double): Boolean = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath) */
-  def isPointInPath(x: Double, y: Double,
-      fillRule: CanvasFillRule): Boolean = js.native
+  def isPointInPath(
+      x: Double, y: Double, fillRule: CanvasFillRule
+  ): Boolean = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath) */
   def isPointInPath(path: Path2D, x: Double, y: Double): Boolean = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath) */
-  def isPointInPath(path: Path2D, x: Double, y: Double,
-      fillRule: CanvasFillRule): Boolean = js.native
+  def isPointInPath(
+      path: Path2D, x: Double, y: Double, fillRule: CanvasFillRule
+  ): Boolean = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInStroke) */
   def isPointInStroke(x: Double, y: Double): Boolean = js.native

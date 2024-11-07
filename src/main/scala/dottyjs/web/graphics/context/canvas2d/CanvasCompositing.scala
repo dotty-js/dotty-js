@@ -1,7 +1,6 @@
 package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation#value) */
 type GlobalCompositeOperation = "color" | "color-burn" | "color-dodge" |
@@ -12,7 +11,7 @@ type GlobalCompositeOperation = "color" | "color-burn" | "color-dodge" |
   "source-in" | "source-out" | "source-over" | "xor"
 
 @js.native
-trait CanvasCompositing extends js.Object:
+private abstract trait CanvasCompositing extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalAlpha) */
   var globalAlpha: Double = js.native
 

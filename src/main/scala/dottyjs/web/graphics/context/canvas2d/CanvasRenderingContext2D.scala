@@ -1,7 +1,6 @@
 package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 import dottyjs.dom.HTMLCanvasElement
 import dottyjs.web.graphics.context.canvas2d.CanvasCompositing
@@ -17,7 +16,7 @@ import dottyjs.dom.HTMLCanvasElement
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D) */
 @js.native
-trait CanvasRenderingContext2D
+abstract trait CanvasRenderingContext2D
     extends js.Object, CanvasCompositing, CanvasDrawImage, CanvasDrawPath,
       CanvasFillStrokeStyles, CanvasFilters, CanvasImageData,
       CanvasImageSmoothing, CanvasPath, CanvasPathDrawingStyles, CanvasRect,

@@ -1,10 +1,9 @@
 package dottyjs.web.graphics.context.canvas2d
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 @js.native
-trait CanvasShadowStyles extends js.Object:
+private abstract trait CanvasShadowStyles extends js.Object:
   // TODO investigate natural double type
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowBlur) */
   def shadowBlur: Double = js.native
