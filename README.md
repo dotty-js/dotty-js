@@ -13,9 +13,9 @@
 ## Goals
 Provide bindings for game-like apis for graphics, audio and input, as well the smallest subset of HTML/DOM apis like `HTMLCanvasElement` and `window` to render those graphics
 * Web
-   * [Geometry Interfaces](https://developer.mozilla.org/en-US/docs/Web/API/Geometry_Interfaces) (in progress)
+   * [Geometry Interfaces](https://developer.mozilla.org/en-US/docs/Web/API/Geometry_Interfaces) (testing)
    * Graphics
-      * [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) (ready)
+      * [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) (testing)
       * [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) (roadmap)
       * [WebGPU API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) (roadmap)
    * [Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) (in progress)
@@ -23,7 +23,7 @@ Provide bindings for game-like apis for graphics, audio and input, as well the s
       * [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) (roadmap)
 * DOM
    * [Window API](https://developer.mozilla.org/en-US/docs/Web/API/Window) (roadmap)
-   * [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) (usable)
+   * [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) (testing)
 
 ## Why not full browser API?
 * Scala.js DOM, already targets the full browser API, but it's easy to get outdated both in coverage, not event [typescript libdom](https://github.com/microsoft/TypeScript-DOM-lib-generator) it's always up to date
