@@ -140,6 +140,9 @@ object DOMPointReadOnly extends js.Object:
 end DOMPointReadOnly
 ```
 
+### Decorators
+Only js classes need `js.native`, traits and abstract classes can omit `js.native `
+
 ### Blocks and indentation 
 Use indentation always, avoid braces
 

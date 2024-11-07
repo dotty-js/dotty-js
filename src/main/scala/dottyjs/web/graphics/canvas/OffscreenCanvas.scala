@@ -13,7 +13,7 @@ end ImageEncodeOptions
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas#instance_properties) */
 @js.native
-abstract trait OffscreenCanvasProperties extends js.Object:
+private abstract trait OffscreenCanvasProperties extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height)
     * integer non-negative
     */

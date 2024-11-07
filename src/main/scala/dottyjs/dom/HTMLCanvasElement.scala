@@ -13,56 +13,61 @@ import dottyjs.web.graphics.canvas.CanvasContextMethods
 import dottyjs.web.graphics.context.canvas2d.CanvasRenderingContext2D
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_properties) */
-@js.native
-private abstract trait HTMLCanvasElementProperties
-    extends OffscreenCanvasProperties
+private abstract trait HTMLCanvasElementProperties extends js.Object:
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height)
+    * Unnsigned
+    */
+  var height: Int
+
+  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height)
+    * Unnsigned
+    */
+  var width: Int
+end HTMLCanvasElementProperties
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_methods) */
-@js.native
 private abstract trait HTMLCanvasElementMethods
     extends js.Object with CanvasContextMethods[CanvasRenderingContext2D]:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream) */
-  def captureStream(): MediaStream = js.native
+  def captureStream(): MediaStream
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream) */
-  def captureStream(frameRequestRate: Double): MediaStream = js.native
+  def captureStream(frameRequestRate: Double): MediaStream
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL) */
-  def toDataURL(): String = js.native
+  def toDataURL(): String
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL) */
-  def toDataURL(`type`: String): String = js.native
+  def toDataURL(`type`: String): String
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL) */
   def toDataURL(
       `type`: String,
       /** Between 0 and 1 */
       quality: Double
-  ): String = js.native
+  ): String
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob) */
-  def toBlob(callback: js.Function1[Blob | Null, Unit]): Unit = js.native
+  def toBlob(callback: js.Function1[Blob | Null, Unit]): Unit
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob) */
-  def toBlob(
-      callback: js.Function1[Blob | Null, Unit], `type`: String
-  ): Unit = js.native
+  def toBlob(callback: js.Function1[Blob | Null, Unit], `type`: String): Unit
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob) */
   def toBlob(
       callback: js.Function1[Blob | Null, Unit], `type`: String, quality: String
-  ): Unit = js.native
+  ): Unit
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen) */
-  def transferControlToOffscreen(): OffscreenCanvas = js.native
+  def transferControlToOffscreen(): OffscreenCanvas
 end HTMLCanvasElementMethods
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#events) */
-@js.native
 private abstract trait HTMLCanvasElementEvents extends js.Object:
 // TODO
 end HTMLCanvasElementEvents
 
+// HTML elements should be abstract as they are created by `document.createElement` factory
 @js.native
 @JSGlobal
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) */
