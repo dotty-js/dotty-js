@@ -3,7 +3,7 @@ package dottyjs.web.graphics.canvas
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import dottyjs.web.graphics.context.canvas2d.CanvasRenderingContext2D
-import dottyjs.web.graphics.context.canvas2d.Canvas2dContext2DAttributes
+import dottyjs.web.graphics.context.canvas2d.CanvasRenderingContext2DAttributes
 import dottyjs.web.graphics.context.webgl.WebGLRenderingContext
 import dottyjs.web.graphics.context.webgl.WebGLContextAttributes
 import dottyjs.web.graphics.context.webgl2.WebGL2RenderingContext
@@ -18,7 +18,7 @@ abstract trait CanvasContextMethods extends js.Object:
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
   def getContext(
-      contextId: "2d", options: Canvas2dContext2DAttributes
+      contextId: "2d", options: CanvasRenderingContext2DAttributes
   ): CanvasRenderingContext2D | Null = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */

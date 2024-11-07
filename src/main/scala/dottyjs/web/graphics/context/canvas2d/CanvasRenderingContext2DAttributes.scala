@@ -5,7 +5,7 @@ import scala.scalajs.js.annotation._
 import dottyjs.web.graphics.canvas.CanvasColorSpace
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#contextattributes) */
-trait Canvas2dContext2DAttributes extends js.Object:
+trait CanvasRenderingContext2DAttributes extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#alpha) */
   var alpha: js.UndefOr[Boolean] = js.undefined
 
@@ -17,4 +17,4 @@ trait Canvas2dContext2DAttributes extends js.Object:
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#willreadfrequently) */
   var willReadFrequently: js.UndefOr[Boolean] = js.undefined
-end Canvas2dContext2DAttributes
+end CanvasRenderingContext2DAttributes

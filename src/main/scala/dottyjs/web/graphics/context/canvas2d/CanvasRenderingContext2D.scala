@@ -11,7 +11,7 @@ import dottyjs.web.graphics.context.canvas2d.CanvasFilters
 import dottyjs.web.graphics.context.canvas2d.CanvasImageData
 import dottyjs.web.graphics.context.canvas2d.CanvasImageSmoothing
 import dottyjs.web.graphics.context.canvas2d.CanvasPath
-import dottyjs.web.graphics.context.canvas2d.Canvas2dContext2DAttributes
+import dottyjs.web.graphics.context.canvas2d.CanvasRenderingContext2DAttributes
 import dottyjs.dom.HTMLCanvasElement
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D) */
@@ -26,5 +26,5 @@ abstract trait CanvasRenderingContext2D
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas) */
   val canvas: HTMLCanvasElement | Null = js.native
 
-  def getContextAttributes(): Canvas2dContext2DAttributes = js.native
+  def getContextAttributes(): CanvasRenderingContext2DAttributes = js.native
 }
