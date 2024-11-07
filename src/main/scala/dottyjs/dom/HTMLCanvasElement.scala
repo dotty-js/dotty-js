@@ -10,6 +10,7 @@ import org.scalajs.dom.MediaStream
 import dottyjs.web.graphics.canvas.OffscreenCanvas
 import dottyjs.web.graphics.canvas.OffscreenCanvasProperties
 import dottyjs.web.graphics.canvas.CanvasContextMethods
+import dottyjs.web.graphics.context.canvas2d.CanvasRenderingContext2D
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_properties) */
 @js.native
@@ -19,7 +20,7 @@ private abstract trait HTMLCanvasElementProperties
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement#instance_methods) */
 @js.native
 private abstract trait HTMLCanvasElementMethods
-    extends js.Object with CanvasContextMethods:
+    extends js.Object with CanvasContextMethods[CanvasRenderingContext2D]:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream) */
   def captureStream(): MediaStream = js.native
 

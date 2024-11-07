@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 
 import org.scalajs.dom.Blob
+import dottyjs.web.graphics.context.canvas2d.OffscreenCanvasRenderingContext2D
 
 trait ImageEncodeOptions extends js.Object:
   var quality: js.UndefOr[Double] = js.undefined
@@ -27,7 +28,7 @@ end OffscreenCanvasProperties
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas#instance_methods) */
 @js.native
 private abstract trait OffscreenCanvasMethods
-    extends js.Object with CanvasContextMethods:
+    extends js.Object with CanvasContextMethods[OffscreenCanvasRenderingContext2D]:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob) */
   def convertToBlob(options: ImageEncodeOptions): js.Promise[Blob]
 

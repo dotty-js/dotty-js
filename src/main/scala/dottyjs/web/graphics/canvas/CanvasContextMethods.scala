@@ -9,17 +9,21 @@ import dottyjs.web.graphics.context.webgl.WebGLRenderingContextAttributes
 import dottyjs.web.graphics.context.webgl2.WebGL2RenderingContext
 import dottyjs.web.graphics.context.bitmap.ImageBitmapRenderingContext
 import dottyjs.web.graphics.context.bitmap.ImageBitmapRenderingContextAttributes
+import dottyjs.web.graphics.context.canvas2d.OffscreenCanvasRenderingContext2D
 
-  /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
+type RenderingContext2D =
+  (CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D)
+
+/** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
 @js.native
-abstract trait CanvasContextMethods extends js.Object:
+abstract trait CanvasContextMethods[T <: RenderingContext2D] extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
-  def getContext(contextId: "2d"): CanvasRenderingContext2D | Null = js.native
+  def getContext(contextId: "2d"): T | Null = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
   def getContext(
       contextId: "2d", options: CanvasRenderingContext2DAttributes
-  ): CanvasRenderingContext2D | Null = js.native
+  ): T | Null = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
   def getContext(contextId: "webgl"): WebGLRenderingContext | Null = js.native
@@ -43,6 +47,7 @@ abstract trait CanvasContextMethods extends js.Object:
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/getContext) */
   def getContext(
-      contextId: "bitmaprenderer", options: ImageBitmapRenderingContextAttributes
+      contextId: "bitmaprenderer",
+      options: ImageBitmapRenderingContextAttributes
   ): ImageBitmapRenderingContext | Null
 end CanvasContextMethods
