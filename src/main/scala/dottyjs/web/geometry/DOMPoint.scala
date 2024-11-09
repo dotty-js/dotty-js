@@ -19,6 +19,8 @@ private abstract trait DOMPointProperties extends js.Object:
   var w: Double
 end DOMPointProperties
 
+type DOMPointArguments = DOMPointInit | DOMPointProperties
+
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly#instance_methods) */
 @js.native
 private abstract trait DOMPointMethods extends js.Object:
@@ -64,7 +66,7 @@ end DOMPointReadOnly
 @JSGlobal
 object DOMPointReadOnly extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/fromPoint_static) */
-  def fromPoint(other: DOMPointInit): DOMPoint = js.native
+  def fromPoint(other: DOMPointArguments): DOMPoint = js.native
 end DOMPointReadOnly
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint) */
@@ -101,5 +103,5 @@ end DOMPoint
 @JSGlobal
 object DOMPoint extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/fromPoint_static) */
-  def fromPoint(other: DOMPointInit): DOMPoint = js.native
+  def fromPoint(other: DOMPointArguments): DOMPoint = js.native
 end DOMPoint

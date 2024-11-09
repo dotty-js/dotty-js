@@ -7,26 +7,26 @@ import scala.scalajs.js.annotation._
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) */
 trait DOMQuadInit extends js.Object:
-  var p1: DOMPointInit
-  var p2: DOMPointInit
-  var p3: DOMPointInit
-  var p4: DOMPointInit
+  var p1: DOMPointArguments
+  var p2: DOMPointArguments
+  var p3: DOMPointArguments
+  var p4: DOMPointArguments
 end DOMQuadInit
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad#instance_properties) */
 private abstract trait DOMQuadProperties extends js.Object:
-  var p1: DOMPoint
-  var p2: DOMPoint
-  var p3: DOMPoint
-  var p4: DOMPoint
+  var p1: DOMPointArguments
+  var p2: DOMPointArguments
+  var p3: DOMPointArguments
+  var p4: DOMPointArguments
 end DOMQuadProperties
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) */
 @js.native
 @JSGlobal
 class DOMQuad(
-    val p1: DOMPointInit, val p2: DOMPointInit, val p3: DOMPointInit,
-    val p4: DOMPointInit
+    val p1: DOMPointArguments, val p2: DOMPointArguments, val p3: DOMPointArguments,
+    val p4: DOMPointArguments
 ) extends js.Object:
   def getBounds(): DOMRect = js.native
   def toJSON(): DOMQuadProperties = js.native
