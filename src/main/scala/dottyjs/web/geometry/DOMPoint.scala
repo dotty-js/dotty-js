@@ -23,7 +23,7 @@ end DOMPointProperties
 @js.native
 private abstract trait DOMPointMethods extends js.Object:
   /** MDN Reference TODO N/A*/
-  def matrixTransform(matrix: DOMMatrixInit): DOMPointMethods = js.native
+  def matrixTransform(matrix: DOMMatrixArguments): DOMPointMethods = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON) */
   def toJSON(): DOMPointProperties = js.native

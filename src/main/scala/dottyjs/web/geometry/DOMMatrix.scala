@@ -53,11 +53,13 @@ trait DOMMatrix2DProperties extends js.Object:
   var m42: Double
 end DOMMatrix2DProperties
 
+type DOMMatrix2DArguments = DOMMatrix2DInit | DOMMatrix2DProperties
+
 /* [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#instance_properties) */
 abstract trait DOMMatrixProperties extends js.Object with DOMMatrix2DProperties:
   var is2D: Boolean
 
-  // TODO check why isIdentity its here and snot on DOMMatrix2DInit from tslib
+  // TODO check if this is computed or manual
   var isIdentity: Boolean
 
   var m13: Double
@@ -76,6 +78,8 @@ abstract trait DOMMatrixProperties extends js.Object with DOMMatrix2DProperties:
   var m44: Double
 end DOMMatrixProperties
 
+type DOMMatrixArguments = DOMMatrixInit | DOMMatrixProperties
+
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly#instance_methods) */
 @js.native
 abstract trait DOMMatrixReadOnlyMethods extends js.Object:
@@ -83,7 +87,9 @@ abstract trait DOMMatrixReadOnlyMethods extends js.Object:
   def flipX(): DOMMatrix = js.native
   def flipY(): DOMMatrix = js.native
   def inverse(): DOMMatrix = js.native
-  def multiply(other: DOMMatrixInit): DOMMatrix = js.native
+  def multiply(
+      other: DOMMatrixArguments
+  ): DOMMatrix = js.native
   def rotate(rotX: Double): DOMMatrix = js.native
   def rotate(rotX: Double, rotY: Double): DOMMatrix = js.native
   def rotate(rotX: Double, rotY: Double, rotZ: Double): DOMMatrix = js.native
@@ -154,7 +160,7 @@ end DOMMatrixReadOnlyMethods
 object DOMMatrixReadOnly extends js.Object:
   def fromFloat32Array(array32: Float32Array): DOMMatrixReadOnly = js.native
   def fromFloat64Array(array64: Float64Array): DOMMatrixReadOnly = js.native
-  def fromMatrix(other: DOMMatrixInit): DOMMatrixReadOnly = js.native
+  def fromMatrix(other: DOMMatrixArguments): DOMMatrixReadOnly = js.native
 end DOMMatrixReadOnly
 
 @js.native
@@ -198,8 +204,8 @@ end DOMMatrixReadOnly
 @js.native
 abstract trait DOMMatrixMethods extends js.Object with DOMMatrixReadOnlyMethods:
   def invertSelf(): DOMMatrix = js.native
-  def multiplySelf(other: DOMMatrixInit): DOMMatrix = js.native
-  def preMultiplySelf(other: DOMMatrixInit): DOMMatrix = js.native
+  def multiplySelf(other: DOMMatrixArguments): DOMMatrix = js.native
+  def preMultiplySelf(other: DOMMatrixArguments): DOMMatrix = js.native
 
   def rotateAxisAngleSelf(x: Double): DOMMatrix = js.native
   def rotateAxisAngleSelf(x: Double, y: Double): DOMMatrix = js.native
@@ -299,5 +305,5 @@ end DOMMatrix
 object DOMMatrix extends js.Object:
   def fromFloat32Array(array32: Float32Array): DOMMatrix = js.native
   def fromFloat64Array(array64: Float64Array): DOMMatrixReadOnly = js.native
-  def fromMatrix(other: DOMMatrixInit): DOMMatrix = js.native
+  def fromMatrix(other: DOMMatrixArguments): DOMMatrix = js.native
 end DOMMatrix
