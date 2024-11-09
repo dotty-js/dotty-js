@@ -23,7 +23,9 @@ private abstract trait DOMRectProperties extends js.Object:
   var left: Double
 end DOMRectProperties
 
-/** TODO MDN Rereference not available */
+type DomRectArguments = DOMRectInit | DOMRectProperties
+
+/** TODO MDN Reference not available */
 @js.native
 private abstract trait DOMRectMethods extends js.Object:
   // Not on MDN but tested on Chromium also appeared on tslib
@@ -47,7 +49,7 @@ end DOMRectReadOnly
 @JSGlobal
 object DOMRectReadOnly extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/fromRect_static) */
-  def fromRect(other: DOMRectInit): DOMRectReadOnly = js.native
+  def fromRect(other: DomRectArguments): DOMRectReadOnly = js.native
 end DOMRectReadOnly
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) */
@@ -74,5 +76,5 @@ end DOMRect
 @JSGlobal
 object DOMRect extends js.Object:
   /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/fromRect_static) */
-  def fromRect(other: DOMRectInit): DOMRect = js.native
+  def fromRect(other: DomRectArguments): DOMRect = js.native
 end DOMRect

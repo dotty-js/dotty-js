@@ -35,7 +35,7 @@ trait DOMMatrixInit extends js.Object with DOMMatrix2DInit:
   var m44: js.UndefOr[Double] = js.undefined
 end DOMMatrixInit
 
-trait DOMMatrix2DProperties extends js.Object:
+abstract trait DOMMatrix2DProperties extends js.Object:
   var a: Double
   var b: Double
   var c: Double
@@ -147,7 +147,7 @@ abstract trait DOMMatrixReadOnlyMethods extends js.Object:
 
   def toJSON(): DOMMatrixProperties = js.native
 
-  def transformPoint(point: DOMPointInit): DOMPoint = js.native
+  def transformPoint(point: DOMPointArguments): DOMPoint = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/translate) */
   def translate(tx: Double, ty: Double): DOMMatrix = js.native

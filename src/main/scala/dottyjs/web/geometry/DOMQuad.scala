@@ -39,5 +39,5 @@ type DOMQuadArguments = DOMQuadInit | DOMQuadProperties
 @JSGlobal
 object DOMQuad extends js.Object:
   def fromQuad(other: DOMQuadArguments): DOMQuad = js.native
-  def fromRect(other: DOMRectInit): DOMQuad = js.native
+  def fromRect(other: DomRectArguments): DOMQuad = js.native
 end DOMQuad
