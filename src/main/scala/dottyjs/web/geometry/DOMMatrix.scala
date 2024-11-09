@@ -4,7 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{Float32Array, Float64Array}
 
-// Matches tslib iterface
+// TODO, derive from DOMMatrix2DProperties like Partial<DOMMatrix2DProperties>
 trait DOMMatrix2DInit extends js.Object:
   var a: js.UndefOr[Double] = js.undefined
   var b: js.UndefOr[Double] = js.undefined
@@ -20,7 +20,7 @@ trait DOMMatrix2DInit extends js.Object:
   var m42: js.UndefOr[Double] = js.undefined
 end DOMMatrix2DInit
 
-// Matches tslib iterface
+// TODO, derive from DOMMatrixProperties like Partial<DOMMatrixProperties>
 trait DOMMatrixInit extends js.Object with DOMMatrix2DInit:
   var is2D: js.UndefOr[Boolean] = js.undefined
   var m13: js.UndefOr[Double] = js.undefined
@@ -35,12 +35,7 @@ trait DOMMatrixInit extends js.Object with DOMMatrix2DInit:
   var m44: js.UndefOr[Double] = js.undefined
 end DOMMatrixInit
 
-/* [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#instance_properties) */
-private abstract trait DOMMatrixProperties extends js.Object:
-  var is2D: Boolean
-
-  var isIdentity: Boolean
-
+trait DOMMatrix2DProperties extends js.Object:
   var a: Double
   var b: Double
   var c: Double
@@ -50,18 +45,33 @@ private abstract trait DOMMatrixProperties extends js.Object:
 
   var m11: Double
   var m12: Double
-  var m13: Double
-  var m14: Double
+
   var m21: Double
   var m22: Double
-  var m23: Double
-  var m24: Double
-  var m31: Double
-  var m32: Double
-  var m33: Double
-  var m34: Double
+
   var m41: Double
   var m42: Double
+end DOMMatrix2DProperties
+
+/* [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix#instance_properties) */
+abstract trait DOMMatrixProperties extends js.Object with DOMMatrix2DProperties:
+  var is2D: Boolean
+
+  // TODO check why isIdentity its here and snot on DOMMatrix2DInit from tslib
+  var isIdentity: Boolean
+
+  var m13: Double
+  var m14: Double
+
+  var m23: Double
+  var m24: Double
+
+  var m31: Double
+  var m32: Double
+
+  var m33: Double
+  var m34: Double
+
   var m43: Double
   var m44: Double
 end DOMMatrixProperties

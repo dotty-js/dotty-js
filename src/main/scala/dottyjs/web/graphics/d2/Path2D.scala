@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 import dottyjs.web.geometry.DOMMatrix2DInit
+import dottyjs.web.geometry.DOMMatrix2DProperties
 import dottyjs.web.graphics.d2.CanvasPath
 
 @js.native
@@ -21,5 +22,7 @@ class Path2D extends js.Object with CanvasPath:
   def addPath(path: Path2D): Unit = js.native
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/addPath) */
-  def addPath(path: Path2D, transform: DOMMatrix2DInit): Unit = js.native
+  def addPath(
+      path: Path2D, transform: DOMMatrix2DInit | DOMMatrix2DProperties
+  ): Unit = js.native
 end Path2D

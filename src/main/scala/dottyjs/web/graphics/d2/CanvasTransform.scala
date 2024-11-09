@@ -2,7 +2,9 @@ package dottyjs.web.graphics.d2
 
 import scala.scalajs.js
 
-import dottyjs.web.geometry.{DOMMatrix, DOMMatrix2DInit}
+import dottyjs.web.geometry.DOMMatrix
+import dottyjs.web.geometry.DOMMatrix2DInit
+import dottyjs.web.geometry.DOMMatrix2DProperties
 
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#transformations) */
 private abstract trait CanvasTransform extends js.Object:
@@ -23,8 +25,9 @@ private abstract trait CanvasTransform extends js.Object:
       a: Double, b: Double, c: Double, d: Double, e: Double, f: Double
   ): Unit
 
+  // DOMMatrix2DInit from tslib not MDN
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform) */
-  def setTransform(t: DOMMatrix2DInit): Unit
+  def setTransform(t: DOMMatrix2DInit | DOMMatrix2DProperties): Unit
 
   /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/transform) */
   def transform(
