@@ -32,10 +32,12 @@ class DOMQuad(
   def toJSON(): DOMQuadProperties = js.native
 end DOMQuad
 
+type DOMQuadArguments = DOMQuadInit | DOMQuadProperties
+
 /** [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) */
 @js.native
 @JSGlobal
 object DOMQuad extends js.Object:
-  def fromQuad(other: DOMQuadInit): DOMQuad = js.native
+  def fromQuad(other: DOMQuadArguments): DOMQuad = js.native
   def fromRect(other: DOMRectInit): DOMQuad = js.native
 end DOMQuad
